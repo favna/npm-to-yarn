@@ -1,7 +1,9 @@
 # npm-to-yarn
 
-![GitHub package.json version (master)](https://img.shields.io/github/package-json/v/armano2/npm-to-yarn/master?label=current%20version)
+
+[![npm](https://img.shields.io/npm/v/@armano/npm-to-yarn)](https://www.npmjs.com/package/@armano/npm-to-yarn)
 [![CI](https://github.com/armano2/npm-to-yarn/actions/workflows/ci.yml/badge.svg)](https://github.com/armano2/npm-to-yarn/actions/workflows/ci.yml)
+![NPM](https://img.shields.io/npm/l/@armano/npm-to-yarn)
 
 **Summary**
 
