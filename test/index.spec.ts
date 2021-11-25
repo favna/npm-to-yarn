@@ -5,6 +5,7 @@ import convert from '../src'
 describe('NPM to Yarn tests', () => {
   it('Simple convert works', () => {
     expect(convert('npm install squirrelly', 'yarn')).toEqual('yarn add squirrelly')
+    expect(convert('npm install my--save-dev', 'yarn')).toEqual('yarn add my--save-dev')
   })
 
   it('Simple convert works w/ remove', () => {
@@ -13,6 +14,7 @@ describe('NPM to Yarn tests', () => {
 
   it('Global install', () => {
     expect(convert('npm install squirrelly --global', 'yarn')).toEqual('yarn global add squirrelly')
+    expect(convert('npm install squirrelly -g', 'yarn')).toEqual('yarn global add squirrelly')
   })
 
   it('Global uninstall', () => {
