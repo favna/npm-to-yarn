@@ -1,19 +1,7 @@
 # npm-to-yarn
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[logo]: https://img.shields.io/badge/all_contributors-0-orange.svg 'Number of contributors on All-Contributors'
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-![GitHub package.json version (master)](https://img.shields.io/github/package-json/v/nebrelbug/npm-to-yarn/master?label=current%20version)
-[![Travis](https://img.shields.io/travis/com/nebrelbug/npm-to-yarn/master.svg)](https://travis-ci.com/nebrelbug/npm-to-yarn)
-[![All Contributors][logo]](#contributors-)
-[![Coveralls](https://img.shields.io/coveralls/nebrelbug/npm-to-yarn.svg)](https://coveralls.io/github/nebrelbug/npm-to-yarn)
-
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Dev Dependencies](https://img.shields.io/david/dev/nebrelbug/npm-to-yarn)](https://david-dm.org/nebrelbug/npm-to-yarn?type=dev)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/bengubler)
+![GitHub package.json version (master)](https://img.shields.io/github/package-json/v/armano2/npm-to-yarn/master?label=current%20version)
+[![CI](https://github.com/armano2/npm-to-yarn/actions/workflows/ci.yml/badge.svg)](https://github.com/armano2/npm-to-yarn/actions/workflows/ci.yml)
 
 **Summary**
 
