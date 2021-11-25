@@ -1,4 +1,4 @@
-name: Reelase
+name: Release
 on: workflow_dispatch
 jobs:
   release:
@@ -37,5 +37,10 @@ jobs:
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
+        with:
+          branches: |
+            [
+              'main'
+            ]
         env:
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
