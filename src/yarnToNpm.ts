@@ -58,6 +58,9 @@ const yarnToNpmTable = {
   init: 'init',
   create: 'init',
   run: 'run',
+  start: 'start',
+  stop: 'stop',
+  test: 'test',
   global(command: string) {
     if (/^global add/.test(command)) {
       return yarnToNpmTable.add(command.replace(/^global add/, 'add'), true)
