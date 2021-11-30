@@ -85,6 +85,9 @@ const npmToYarnTable = {
     }
     return args.filter((item) => item !== '--scope')
   },
+  start: 'start',
+  stop: 'stop',
+  test: 'test',
 }
 
 export function npmToYarn(_m: string, command: string): string {
