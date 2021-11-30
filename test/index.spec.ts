@@ -28,6 +28,7 @@ describe('NPM to Yarn tests', () => {
   })
 
   it('Version works', () => {
+    expect(convert('npm version', 'yarn')).toEqual('yarn version')
     expect(convert('npm version major', 'yarn')).toEqual('yarn version --major')
   })
 
@@ -146,6 +147,7 @@ describe('Yarn to NPM tests', () => {
   })
 
   it('Version works', () => {
+    expect(convert('yarn version', 'npm')).toEqual('npm version')
     expect(convert('yarn version --major', 'npm')).toEqual('npm version major')
   })
 
