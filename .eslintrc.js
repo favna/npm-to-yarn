@@ -9,15 +9,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
-  ignorePatterns: [
-    'node_modules',
-    'dist',
-    'build',
-    'coverage',
-    'browser-tests',
-    'tools',
-    'rollup.config.ts',
-  ],
+  ignorePatterns: ['node_modules', 'dist', 'coverage'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',

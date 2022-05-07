@@ -1,6 +1,5 @@
 # npm-to-yarn
 
-
 [![npm](https://img.shields.io/npm/v/@armano/npm-to-yarn)](https://www.npmjs.com/package/@armano/npm-to-yarn)
 [![CI](https://github.com/armano2/npm-to-yarn/actions/workflows/ci.yml/badge.svg)](https://github.com/armano2/npm-to-yarn/actions/workflows/ci.yml)
 ![NPM](https://img.shields.io/npm/l/@armano/npm-to-yarn)
@@ -26,11 +25,26 @@ convert('npm install squirrelly', 'yarn')
 // yarn add squirrelly
 ```
 
-`npm-to-yarn` exposes a UMD build, so you can also install it with a CDN (it exposes global variable `n2y`)
+`npm-to-yarn` exposes a commonjs build
 
 ### API
 
-`convert(command: string, to: 'yarn' | 'npm') -> string`
+```ts
+/**
+ * Converts yarn to npm command
+ */
+export function convertToNpm(str: string): string;
+
+/**
+ * Converts npm to yarn command
+ */
+export function convertToYarn(str: string): string;
+
+/**
+ * Converts between npm and yarn command
+ */
+export default function convert(str: string, to: 'npm' | 'yarn'): string;
+```
 
 ## ✔️ Tests
 
@@ -43,6 +57,7 @@ To be added
 ## Projects using `npm-to-yarn`
 
 - [Dynamoose](https://dynamoosejs.com)
+- [Docusaurus](https://docusaurus.io)
 
 ## Contributors
 
