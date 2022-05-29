@@ -74,6 +74,15 @@ describe('NPM to Yarn tests', () => {
     expect(convert('npm run custom -- --version', 'yarn')).toEqual('yarn custom --version')
   })
 
+  it('npm exec', () => {
+    expect(convert('npm exec custom', 'yarn')).toEqual('yarn custom')
+    expect(convert('npm exec add', 'yarn')).toEqual('yarn run add')
+    expect(convert('npm exec install', 'yarn')).toEqual('yarn run install')
+    expect(convert('npm exec run', 'yarn')).toEqual('yarn run run')
+    // with args
+    expect(convert('npm exec custom -- --version', 'yarn')).toEqual('yarn custom --version')
+  })
+
   it('npm list', () => {
     expect(convert('npm list', 'yarn')).toEqual('yarn list')
     expect(convert('npm list package', 'yarn')).toEqual('yarn list --pattern "package"')

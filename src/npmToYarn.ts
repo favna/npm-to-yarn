@@ -50,6 +50,16 @@ const npmToYarnTable = {
     args[0] = 'add --force'
     return args
   },
+  exec(args: string[]) {
+    if (args[1] && !unchangedCLICommands.includes(args[1]) && !yarnCLICommands.includes(args[1])) {
+      args.splice(0, 1)
+    }
+    const index = args.findIndex((a) => a === '--')
+    if (index >= 0) {
+      args.splice(index, 1)
+    }
+    return args
+  },
   run(args: string[]) {
     if (args[1] && !unchangedCLICommands.includes(args[1]) && !yarnCLICommands.includes(args[1])) {
       args.splice(0, 1)
