@@ -1,14 +1,6 @@
 import { yarnToNPM } from './yarnToNpm'
 import { npmToYarn } from './npmToYarn'
 
-export function convertToNpm(str: string) {
-  return str.replace(/yarn(?: +([^&\n\r]*))?/gm, yarnToNPM)
-}
-
-export function convertToYarn(str: string) {
-  return str.replace(/npm(?: +([^&\n\r]*))?/gm, npmToYarn)
-}
-
 /**
  * Converts yarn to npm command
  */
