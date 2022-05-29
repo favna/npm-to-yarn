@@ -8,6 +8,13 @@ describe('NPM to Yarn tests', () => {
     expect(convert('npm install my--save-dev', 'yarn')).toEqual('yarn add my--save-dev')
     expect(convert('npm i squirrelly', 'yarn')).toEqual('yarn add squirrelly')
     expect(convert('npm i my--save-dev', 'yarn')).toEqual('yarn add my--save-dev')
+    expect(convert('npm i squirrelly --no-package-lock', 'yarn')).toEqual(
+      'yarn add squirrelly --no-lockfile'
+    )
+    expect(convert('npm i squirrelly --save-optional', 'yarn')).toEqual(
+      'yarn add squirrelly --optional'
+    )
+    expect(convert('npm i squirrelly --save-exact', 'yarn')).toEqual('yarn add squirrelly --exact')
   })
 
   it('Simple convert works w/ remove', () => {
@@ -34,6 +41,8 @@ describe('NPM to Yarn tests', () => {
   it('Version works', () => {
     expect(convert('npm version', 'yarn')).toEqual('yarn version')
     expect(convert('npm version major', 'yarn')).toEqual('yarn version --major')
+    expect(convert('npm version minor', 'yarn')).toEqual('yarn version --minor')
+    expect(convert('npm version patch', 'yarn')).toEqual('yarn version --patch')
   })
 
   it('npm install', () => {
@@ -117,6 +126,15 @@ describe('NPM to Yarn tests', () => {
 describe('Yarn to NPM tests', () => {
   it('Simple convert works', () => {
     expect(convert('yarn add squirrelly', 'npm')).toEqual('npm install squirrelly --save')
+    expect(convert('yarn add squirrelly --no-lockfile', 'npm')).toEqual(
+      'npm install squirrelly --no-package-lock --save'
+    )
+    expect(convert('yarn add squirrelly --optional', 'npm')).toEqual(
+      'npm install squirrelly --save-optional --save'
+    )
+    expect(convert('yarn add squirrelly --exact', 'npm')).toEqual(
+      'npm install squirrelly --save-exact --save'
+    )
   })
 
   it('Convert with dev works', () => {
@@ -149,6 +167,9 @@ describe('Yarn to NPM tests', () => {
     expect(convert('yarn global remove squirrelly', 'npm')).toEqual(
       'npm uninstall squirrelly --global'
     )
+    expect(convert('yarn global squirrelly', 'npm')).toEqual(
+      'npm global squirrelly \n' + "# couldn't auto-convert command"
+    )
   })
 
   it('Plain `yarn`', () => {
@@ -162,6 +183,8 @@ describe('Yarn to NPM tests', () => {
   it('Version works', () => {
     expect(convert('yarn version', 'npm')).toEqual('npm version')
     expect(convert('yarn version --major', 'npm')).toEqual('npm version major')
+    expect(convert('yarn version --minor', 'npm')).toEqual('npm version minor')
+    expect(convert('yarn version --patch', 'npm')).toEqual('npm version patch')
   })
 
   it('Yarn remove', () => {

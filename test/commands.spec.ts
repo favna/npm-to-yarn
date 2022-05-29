@@ -21,6 +21,7 @@ describe('should parse command correctly', () => {
     expect(parse('npm --bar "test"')).toEqual(['npm', '--bar', '"test"'])
     expect(parse("npm --bar ''")).toEqual(['npm', '--bar', "''"])
     expect(parse("npm --bar 'test'")).toEqual(['npm', '--bar', "'test'"])
+    expect(parse('yarn add test --no-lockfile')).toEqual(['yarn', 'add', 'test', '--no-lockfile'])
   })
   it('with space in strings', () => {
     expect(parse('npm --bar "test 123"')).toEqual(['npm', '--bar', '"test 123"'])
