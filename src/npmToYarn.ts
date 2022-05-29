@@ -36,6 +36,22 @@ const npmToYarnTable = {
   rebuild(command: string) {
     return command.replace('rebuild', 'add --force')
   },
+  exec (command: string) {
+    return command.replace(
+      /^exec\s?([^\s]+)?(\s--\s--)?(.*)$/,
+      (_, data?: string, dash?: string, rest?: string): string => {
+        let result = ''
+        if (data && !unchangedCLICommands.includes(data) && !yarnCLICommands.includes(data)) {
+          result += data
+        } else {
+          result += 'run ' + (data || '')
+        }
+        if (dash) result += dash.replace(/^\s--/, '')
+        if (rest) result += rest
+        return result
+      }
+    )
+  },
   run(command: string) {
     return command.replace(
       /^run\s?([^\s]+)?(\s--\s--)?(.*)$/,
